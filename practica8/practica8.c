@@ -3,7 +3,7 @@
 #include<string.h>
 
 #define MAX 100
-
+//estructura para el nodo de la lista doble
 struct Nodo{
     int id;
     char titulo[MAX];
