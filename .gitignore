@@ -1,0 +1,26 @@
+*.exe
+*.out
+*.o
+*.obj
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.lof
+*.lot
+# Archivos compilados de C
+*.o
+*.out
+
+# Ejecutables
+a.out
+*.exe
+
+# Ejecutables sin extensión (Linux)
+main
+programa
+test
+.vscode/
