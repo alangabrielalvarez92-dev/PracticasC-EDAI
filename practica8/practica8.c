@@ -228,9 +228,37 @@ void liberarLista(struct Nodo **cabeza) {
     *cabeza = NULL;
 }
 
+void mostrarMenu(){
+        printf("\n-----Carrucel de anuncios-----\n");
+        printf("1. Agregar anuncio.\n");
+        printf("2. Mostrar carrucel de anuncios.\n");
+        printf("3. Mostrar lista de anuncios.\n");
+        printf("4. Buscar anuncio.\n");
+        printf("5. Eliminar anuncio.\n");
+}
+
 int main () {
     struct Nodo *lista = NULL;
     struct Nodo *encontrado;
+    int opcion,id;
+    char titulo[MAX];
+    do {
+       mostrarMenu();
+       scanf("%d",&opcion);
+       getchar();
+       switch (opcion)
+       {
+       case 1:
+        printf("Ingrese el id: ");
+        insertarAnuncio(&lista,id,);
+        
+        break;
+       
+       default:
+        break;
+       } 
+
+    } while (opcion != 6);
 
     insertarAnuncio(&lista, 1234,"Tacos","Ricos Tacos de cabeza");
     insertarAnuncio(&lista, 1235,"Tortas","Ricas Tortas");
