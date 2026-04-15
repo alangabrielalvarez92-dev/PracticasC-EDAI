@@ -235,6 +235,8 @@ void mostrarMenu(){
         printf("3. Mostrar lista de anuncios.\n");
         printf("4. Buscar anuncio.\n");
         printf("5. Eliminar anuncio.\n");
+        printf("6. Salir del programa.\n");
+        printf("Elige una opción: ");
 }
 
 int main () {
@@ -243,6 +245,7 @@ int main () {
     int opcion,id;
     char titulo[MAX];
     char descripcion[MAX];
+
     do {
        mostrarMenu();
        scanf("%d",&opcion);
@@ -264,39 +267,40 @@ int main () {
 
             insertarAnuncio(&lista,id,titulo,descripcion);  
         break;
-        case 2:
+        case 2: // Mostrar carrucel de anuncios
+            mostrarAnuncios(lista);
+        break;
+        case 3: // Mostrar la lista completa de anuncios
+            mostrarLista(lista);
+        break;
+        case 4: // Buscar anuncio
+            printf("Ingrese el id: ");
+            scanf("%d",&id);
+            getchar();
+
+            encontrado = buscarAnuncio(lista, id);
+            if (encontrado != NULL) {
+                printf("\nSe encontró el id: %d\n", encontrado->id);
+            } else {
+                printf("\nNo se encontró el id...\n");
+            }
 
         break;
-       
+        case 5: // Eliminar anuncio
+            printf("Ingrese el id: ");
+            scanf("%d",&id);
+            getchar();
+            eliminarAnuncio(&lista,id);
+        break;
+        case 6: // Salir del programa
+            printf("\nSaliendo del programa...\n");
+        break; 
        default:
+            printf("Opción no válida...\n");
         break;
        } 
 
     } while (opcion != 6);
-
-    insertarAnuncio(&lista, 1234,"Tacos","Ricos Tacos de cabeza");
-    insertarAnuncio(&lista, 1235,"Tortas","Ricas Tortas");
-    insertarAnuncio(&lista, 1236,"Aguas","Aguas frescas de horchata y jamaica");
-    insertarAnuncio(&lista, 1237,"Pumagua","Pumagua la bebida oficial de los paristas");
-    insertarAnuncio(&lista, 1238,"Mcdonals","Me encanta");
-
-    mostrarAnuncios(lista);
-   
-
-    encontrado = buscarAnuncio(lista, 1236);
-    if (encontrado != NULL) {
-        printf("\nSe encontró el id: %d\n", encontrado->id);
-    } else {
-        printf("\nNo se encontró el id...\n");
-    }
-
-    eliminarAnuncio(&lista, 1239);
-    mostrarLista(lista);
-    
-
-    eliminarAnuncio(&lista, 1236);
-    mostrarLista(lista);
-
     liberarLista(&lista);
     return 0;
 }
