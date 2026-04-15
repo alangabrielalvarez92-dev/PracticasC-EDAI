@@ -64,9 +64,9 @@ void mostrarLista(struct Nodo* cabeza) {
     printf("NULL\n");
 }
 
+
 int main() {
     struct Nodo* lista = NULL;
-
     insertar(&lista, 30);
     insertar(&lista, 20);
     insertar(&lista, 10);
