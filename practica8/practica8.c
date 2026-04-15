@@ -242,16 +242,30 @@ int main () {
     struct Nodo *encontrado;
     int opcion,id;
     char titulo[MAX];
+    char descripcion[MAX];
     do {
        mostrarMenu();
        scanf("%d",&opcion);
        getchar();
        switch (opcion)
        {
-       case 1:
-        printf("Ingrese el id: ");
-        insertarAnuncio(&lista,id,);
-        
+       case 1://Agregar anuncio
+            printf("Ingrese el id: ");
+            scanf("%d",&id);
+            getchar();
+
+            printf("Ingresa el título: ");
+            fgets(titulo, MAX, stdin);
+            titulo[strcspn(titulo, "\n")] = '\0';
+
+            printf("Ingresa la descripción: ");
+            fgets(descripcion, MAX, stdin);
+            descripcion[strcspn(descripcion, "\n")] = '\0';
+
+            insertarAnuncio(&lista,id,titulo,descripcion);  
+        break;
+        case 2:
+
         break;
        
        default:
