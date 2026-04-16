@@ -267,7 +267,7 @@ int main () {
 
             insertarAnuncio(&lista,id,titulo,descripcion);  
         break;
-        case 2: // Mostrar carrucel de anuncios
+        case 2: //Mostrar carrusel de anuncios
             mostrarAnuncios(lista);
         break;
         case 3: // Mostrar la lista completa de anuncios
@@ -304,3 +304,4 @@ int main () {
     liberarLista(&lista);
     return 0;
 }
+
